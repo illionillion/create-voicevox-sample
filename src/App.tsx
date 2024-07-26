@@ -45,11 +45,11 @@ function App() {
   }
 
   return (
-    <Container mx="auto">
-      <Center flexDir="column">
+    <Container mx="auto" maxW="2xl" h="100dvh">
+      <Center flexDir="column" w="full" h="full" gap="lg">
         <Heading>VOICEVOX 音声生成 サンプル</Heading>
         <VStack>
-          <Textarea value={inputText} onChange={e => setInputText(e.currentTarget.value)} />
+          <Textarea value={inputText} onChange={e => setInputText(e.currentTarget.value)} placeholder="テキストを入力" />
           <Button onClick={handleCreate} isDisabled={isLoading}>生成</Button>
           {
             audioData ? <audio src={audioData ? window.URL.createObjectURL(audioData) : undefined} controls></audio> : undefined
